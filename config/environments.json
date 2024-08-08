@@ -1,0 +1,11 @@
+{
+  "development": {
+    "baseUrl": "https://www.amazon.com"
+  },
+  "staging": {
+    "baseUrl": "https://www.amazon.com"
+  },
+  "production": {
+    "baseUrl": "https://www.amazon.com"
+  }
+}
