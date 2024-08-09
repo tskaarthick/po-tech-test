@@ -7,7 +7,7 @@ This project is a test automation framework built using Playwright, supporting b
 To clone the repository, use the following command:
 
 ```bash
-git clone https://github.com/tskaarthick/po-tech-test
+git clone https://github.com/tskaarthick/po-tech-test.git
 cd po-tech-test
 ```
 
@@ -28,29 +28,39 @@ This framework uses the Page Object Model (POM) design pattern. POM is a design 
 - The `.env` file is used to specify the environment in which the tests should be run. Users can modify this file to switch between environments.
 - The `config/environments.json` file contains the base URLs for different environments such as development, staging, and production.
 
-## Running Tests
+## Running UI Tests
 
-To execute the tests, use the following command:
+To execute the UI tests, use the following command:
 
 ```bash
 npm run test
 ```
 
-### Running Tests in Headed Mode
+### Running UI Tests in Headed Mode
 
-To run the tests in headed mode (with browser UI):
+To run the UI tests in headed mode (with browser UI):
 
 ```bash
 npm run test:headed
 ```
 
-### Running Tests in UI Mode
+### Running UI Tests in UI Mode
 
-To run the tests in UI mode, which provides a more interactive way to inspect and debug tests:
+To run the UI tests in UI mode, which provides a more interactive way to inspect and debug tests:
 
 ```bash
 npm run test:ui
 ```
+
+## Running API Tests
+
+API tests are designed to run only in a single browser (Chromium) as they are independent of the browser. To execute the API tests, use the following command:
+
+```bash
+npx playwright test --project=chromium --grep=@api
+```
+
+This will run the API tests tagged with `@api` using the Chromium browser configuration.
 
 ## Viewing Reports
 
@@ -97,5 +107,3 @@ This allows you to customize the environment or other parameters when manually r
 ## Conclusion
 
 This framework uses the Page Object Model (POM) to separate test logic from page-specific code, making tests more readable and maintainable. By configuring environments through the `.env` file and `environments.json`, it provides flexibility to run tests across different environments seamlessly.
-
-Feel free to contribute by opening issues or submitting pull requests.
